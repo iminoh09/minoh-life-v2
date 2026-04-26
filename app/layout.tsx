@@ -46,9 +46,6 @@ function Nav() {
         <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
           home
         </Link>
-        <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
-          about
-        </Link>
         <Link href="/software" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
           software
         </Link>
