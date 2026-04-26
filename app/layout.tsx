@@ -6,15 +6,15 @@ import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://next-mdx-blog.vercel.app'),
+  metadataBase: new URL('https://minoh.life'),
   alternates: {
     canonical: '/'
   },
   title: {
-    default: 'John Smith',
-    template: '%s | John Smith'
+    default: 'Min Oh',
+    template: '%s | Min Oh'
   },
-  description: 'My portfolio, blog, and personal website.'
+  description: 'Engineer building AI for chemical and power plants.'
 };
 
 export default function RootLayout({
@@ -39,17 +39,14 @@ export default function RootLayout({
 
 function Footer() {
   const links = [
-    { name: '@johnsmith', url: 'https://x.com/johnsmith' },
-    { name: 'youtube', url: 'https://www.youtube.com/@johnsmith' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/johnsmith' },
-    { name: 'github', url: 'https://github.com/johnsmith' }
+    { name: 'github', url: 'https://github.com/iminoh09' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/min-oh/' }
   ];
-
   return (
     <footer className="mt-12 text-center">
       <div className="flex justify-center space-x-4 tracking-tight">
         {links.map((link) => (
-          <a
+          
             key={link.name}
             href={link.url}
             target="_blank"
