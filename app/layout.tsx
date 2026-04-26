@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className="antialiased tracking-tight">
         <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
           <main className="max-w-[60ch] mx-auto w-full space-y-6">
+            <Nav />
             {children}
           </main>
           <Footer />
@@ -37,11 +39,35 @@ export default function RootLayout({
   );
 }
 
+function Nav() {
+  return (
+    <nav className="mb-8 text-sm">
+      <div className="flex space-x-4 tracking-tight">
+        <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          home
+        </Link>
+        <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          about
+        </Link>
+        <Link href="/software" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          software
+        </Link>
+        <Link href="/publications" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          publications
+        </Link>
+        <Link href="/guestbook" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          guestbook
+        </Link>
+      </div>
+    </nav>
+  );
+}
+
 function Footer() {
   return (
     <footer className="mt-12 text-center">
       <div className="flex justify-center space-x-4 tracking-tight">
-        <a
+        
           href="https://github.com/iminoh09"
           target="_blank"
           rel="noopener noreferrer"
