@@ -63,6 +63,71 @@ function Nav() {
   );
 }
 
+import './globals.css';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
+import Link from 'next/link';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://minoh.life'),
+  alternates: {
+    canonical: '/'
+  },
+  title: {
+    default: 'Min Oh',
+    template: '%s | Min Oh'
+  },
+  description: 'Engineer building AI for chemical and power plants.'
+};
+
+export default function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className={`${inter.className}`}>
+      <body className="antialiased tracking-tight">
+        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 dark:bg-zinc-950 bg-white text-gray-900 dark:text-zinc-200">
+          <main className="max-w-[60ch] mx-auto w-full space-y-6">
+            <Nav />
+            {children}
+          </main>
+          <Footer />
+          <Analytics />
+        </div>
+      </body>
+    </html>
+  );
+}
+
+function Nav() {
+  return (
+    <nav className="mb-8 text-sm">
+      <div className="flex space-x-4 tracking-tight">
+        <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          home
+        </Link>
+        <Link href="/about" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          about
+        </Link>
+        <Link href="/software" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          software
+        </Link>
+        <Link href="/publications" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          publications
+        </Link>
+        <Link href="/guestbook" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors duration-200">
+          guestbook
+        </Link>
+      </div>
+    </nav>
+  );
+}
+
 function Footer() {
   return (
     <footer className="mt-12 text-center">
