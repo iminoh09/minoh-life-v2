@@ -39,8 +39,7 @@ export default function RootLayout({
 
 function Footer() {
   const links = [
-    { name: 'github', url: 'https://github.com/iminoh09' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/min-oh/' }
+    { name: 'github', url: 'https://github.com/iminoh09' }
   ];
   return (
     <footer className="mt-12 text-center">
